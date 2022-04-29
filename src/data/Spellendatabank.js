@@ -1,6 +1,6 @@
 export default [
     {
-        title: "Octagon Kanjam",
+        title: "Octagon Kanjammen",
         urlTitle: "kanjam",
         description:
           "Maak je eigen firsbee uit papier en speel het populairste spel van Australië",
