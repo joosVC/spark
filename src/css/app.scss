@@ -1,0 +1,106 @@
+// app global css in SCSS form
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6 {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+html, body, div, p, .text-body1, .text-body2, .text-subtitle1, .text-subtitle2, .text-title, .text-caption, {
+    font-family: 'Josefin Slab', serif;
+}
+
+.font-josefin {
+    font-family: 'Josefin Slab', serif;
+}
+
+.font-sister {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.text-bgblue {
+    color: #DDE7DC;
+}
+
+.bg-bgblue {
+    background-color: #DDE7DC;
+}
+
+.text-bggreen {
+    color: #2E564B;
+}
+
+.bg-bggreen {
+    background-color: #2E564B;
+}
+
+.text-bgyellow {
+    color: #ECEEBF;
+}
+
+.bg-bgyellow {
+    background-color: #ECEEBF;
+}
+
+.text-darkyellow {
+    color: #6D6E58;
+}
+
+.bg-darkyellow {
+    background-color: #6D6E58;
+}
+
+.text-sred {
+    color: #ED6B6A;
+}
+
+.bg-sred {
+    background-color: #ED6B6A;
+}
+
+.text-syellow {
+    color: #F8B206;
+}
+
+.bg-syellow {
+    background-color: #F8B206;
+}
+
+.text-sorange {
+    color: #F6AE83;
+}
+
+.bg-sorange {
+    background-color: #F6AE83;
+}
+
+.text-sgreen {
+    color: #41B37E;
+}
+
+.bg-sgreen {
+    background-color: #41B37E;
+}
+
+.text-sblue {
+    color: #009FE3;
+}
+
+.bg-sblue {
+    background-color: #009FE3;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-sblack {
+    color: #1C1E1C;
+}
+
+.bg-sblack {
+    background-color: #1C1E1C;
+}
+
+.container-max-width {
+    max-width: 1280px;
+    margin: auto;
+}
+
