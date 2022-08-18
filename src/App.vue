@@ -1,10 +1,17 @@
 <template>
-  <router-view />
+  <div id="q-app">
+    <router-view />
+  </div>
 </template>
 <script>
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'App'
-})
+export default {
+  name: 'App',
+  mounted(){
+    this.$store.dispatch("posts/loadPosts");
+    this.$store.dispatch("labels/loadLabels");
+  }
+}
 </script>
+<style lang="css">
+
+</style>

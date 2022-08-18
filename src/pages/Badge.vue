@@ -1,5 +1,5 @@
 <template>
-  <q-page-container class="bg-bgblue">
+  <q-page-container class="bg-bgyellow">
     <q-page class="bg-bgyellow q-pt-xl" style="z-index: 4">
       <div
         class="absolute-top-left"
@@ -42,7 +42,7 @@
                 : 'text-body1 text-darkyellow q-pb-xl font-josefin'
             "
           >
-            * Deze actie loopt nog t.e.m. 15 december 2021.
+            * Deze actie loopt nog t.e.m. 5 december 2021.
           </div>
         </div>
         <div class="col-12 col-sm-6">
@@ -52,7 +52,7 @@
             <img
               :style="
                 $q.screen.lt.sm
-                  ? 'vertical-align: top; position: absolute;right: 0px; top: -25px; height:250px;'
+                  ? 'vertical-align: top; position: absolute;right: 50px; top: -25px; height:120px;'
                   : 'vertical-align: top; position: absolute;right: 25px; top: -55px;height:250px;'
               "
               src="../assets/badge-heart.svg"
@@ -60,7 +60,7 @@
             <img
               :style="
                 $q.screen.lt.sm
-                  ? 'vertical-align: bottom; position: absolute;right: -15px; bottom: -25px; height:250px;'
+                  ? 'vertical-align: bottom; position: absolute;right: 15px; bottom: -25px; height:120px;'
                   : 'vertical-align: bottom; position: absolute;right: -45px; bottom: -55px;height:250px;'
               "
               src="../assets/badge-paw.svg"
@@ -74,8 +74,8 @@
           <div
             :class="
               $q.screen.lt.sm
-                ? 'text-h4 text-sred q-pb-lg'
-                : 'text-h2 text-sred q-pb-xl'
+                ? 'text-h5 text-sred q-pb-lg'
+                : 'text-h3 text-sred q-pb-xl'
             "
           >
             WÄT
@@ -84,7 +84,7 @@
             :class="{
               'text-h5': $q.screen.gt.sm,
               'text-body1': $q.screen.lt.sm,
-              'text-info': true,
+              'text-standard': true,
               'text-weight-regular': true,
               'font-josefin': true,
               'q-pb-md': $q.screen.gt.sm,
@@ -93,14 +93,13 @@
           >
             Spark wil jeugdbewegingen aan het maken krijgen, daarom geven we
             alle leden van een jeugdbeweging de kans om een supercoole
-            gepersonaliseerde button of badge te maken in een maakplaats in de
-            buurt. Zo heb je meteen ook een keileuke activiteit.
+            gepersonaliseerde button of badge te maken in een maakplaats. Op die manier ontdek je wat de maakplaats in jouw buurt te bieden heeft!
           </div>
           <div
             :class="{
               'text-h5': $q.screen.gt.sm,
               'text-body1': $q.screen.lt.sm,
-              'text-info': true,
+              'text-standard': true,
               'text-weight-regular': true,
               'font-josefin': true,
               'q-pb-md': $q.screen.gt.sm,
@@ -121,20 +120,34 @@
           <div
             :class="
               $q.screen.lt.sm
-                ? 'text-h4 text-sred q-pb-lg'
-                : 'text-h2 text-sred q-pb-xl'
+                ? 'text-h5 text-sred q-pb-lg'
+                : 'text-h3 text-sred q-pb-xl'
             "
           >
             HOE WERKT HET?
           </div>
 
-          <div class="row">
-            <div class="col-6 q-pa-lg" v-for="step in steps" :key="step.number">
-              <div class="row items-center">
-                <div class="col-auto" style="width: 100px">
-                  <q-img :src="step.img" width="90px" height="90px" contain />
+          <div class="row justify-center">
+            <div class="col-12 col-sm-6 q-pa-lg" v-for="step in steps" :key="step.number">
+
+              <div :class="$q.screen.lt.sm ? 'row q-pt-lg': 'row q-px-xl q-pt-xl'">
+                <div class="col-12">
+                            <div style="position: relative; width: 100%">
+            <q-img contain :src="step.hero" />
+
+            <img
+              :style="
+                $q.screen.lt.sm
+                  ? 'vertical-align: top; position: absolute;left: 0px; top: -15px; height:100px;'
+                  : 'vertical-align: top; position: absolute;left: 0px; top: -45px;height:150px;'
+              "
+              :src="step.img"
+            />
+          </div>
                 </div>
-                <div class="col-8 text-h3 q-pl-md text-darkyellow">
+              </div>
+              <div class="row">
+                <div class="col-12 text-h3 text-darkyellow">
                   {{ step.title }}
                 </div>
               </div>
@@ -164,11 +177,11 @@
           <div
             :class="
               $q.screen.lt.sm
-                ? 'text-h4 text-sred q-pb-lg'
-                : 'text-h2 text-sred q-pb-xl'
+                ? 'text-h5 text-sred q-pb-lg'
+                : 'text-h3 text-sred q-pb-xl'
             "
           >
-            DEELNEMENDE MAAKPLAATSEN
+            <span><q-img src="../assets/badge-step1-red.svg" height="60px" width="60px" contain /></span> WAAR KAN JE AAN DE SLAG?
           </div>
 
                   <div
@@ -182,10 +195,152 @@
               'q-pb-sm': $q.screen.lt.sm,
             }"
           >
-            Hieronder vind je de lijst van maakplaatsen die deelnemen aan het project: 
-            <p class="text-weight-bold">Komt weldra online!</p>
+            Hieronder vind je de lijst van maakplaatsen die deelnemen aan het project, kijk ook goed na welke werktuigen elke maakplaats ter beschikking heeft om jouw creatie te maken.
+          </div>
+      WEG
+
+        </div>
+      </div>
+
+      <div class="row q-pa-md q-pr-xl q-my-xl q-pb-xl container-max-width">
+        <div class="col-12 col-sm-12">
+          <div
+            :class="
+              $q.screen.lt.sm
+                ? 'text-h5 text-sred q-pb-lg'
+                : 'text-h3 text-sred q-pb-xl'
+            "
+          >
+             <span><q-img src="../assets/badge-step2-red.svg" height="60px" width="60px" contain /></span> HOE TEKEN JE JOUW ONTWERP?
           </div>
 
+                  <div
+            :class="{
+              'text-h5': $q.screen.gt.sm,
+              'text-body1': $q.screen.lt.sm,
+              'text-darkyellow': true,
+              'text-weight-regular': true,
+              'font-josefin': true,
+              'q-pb-md': $q.screen.gt.sm,
+              'q-pb-sm': $q.screen.lt.sm,
+            }"
+          >
+            <p>Om een ontwerp te snijplotten, laseren of borduren heb je een tekening in vectorformaat nodig (.svg of .dxf bestand). Dat betekent dat je een <span class="text-weight-bold">schets op papier</span> of een <span class="text-weight-bold">tekening die je op het internet vond</span> nog moet <span class="text-weight-bold">'digitaliseren'</span>. Dat kan je doen door gebruik te maken van software zoals <span class="text-weight-bold">Inkscape of Adobe Illustrator</span>. De <span class="text-weight-bold">tutorials</span> hieronder leggen exact uit wat je moet doen, het is makkelijker dan je denkt!</p>
+            <p>We vragen om jouw <span class="text-weight-bold">tekening thuis te digitaliseren</span> en het <span class="text-weight-bold">.dxf of .svg bestand</span> mee te nemen naar de maakplaats (op USB of in je mailbox).</p>
+            <p><span class="text-weight-bold">Zit je vast?</span> Neem dan contact op met de maakplaats uit je buurt. De <span class="text-weight-bold">begeleiders van de maakplaats helpen jou graag verder met het afwerken van je tekening</span>.</p>
+          </div>
+
+
+
+          <div class="row justify-center">
+            <div :class="{'col-12':true, 'col-sm-6': true, 'q-pa-lg': $q.screen.gt.sm, 'q-py-lg': $q.screen.lt.sm }">
+              <q-card :class="$q.screen.lt.sm ? 'tutorial-card': 'q-pa-md tutorial-card'" style="min-height:570px;" @click="openUrl('https://drive.google.com/file/d/1VOeOA3SIWvOHWJTvWDTfVLM0Z0NQNF-g/view?usp=sharing')">
+                                  <q-card-section>
+                    <q-chip
+                      class="q-mb-sm text-body1 text-weight-bold"
+                      color="darkyellow"
+                      text-color="white"
+                      >Inkscape</q-chip
+                    >
+                    <q-img
+                      class="rounded-borders"
+                      src="../assets/tut-inkscape.png"
+                      :ratio="16 / 9"
+                    />
+                  </q-card-section>
+                  <q-card-section class="q-py-none">
+                    <div class="text-h5 text-weight-bold">
+                      Handleiding Inkscape
+                    </div>
+                    <div class="text-body1 text-weight-semibold">
+                      Leer een tekening maken met Inkscape, dat is gratis software om een vectortekening te maken. Via de link vind je een basishandleiding om laserwerk vorm te geven, maar je kan de handleiding ook gebruiken om een tekening te maken die je kan snijplotten of borduren.
+                    </div>
+                  </q-card-section>
+
+                  <q-card-actions
+                    style="position: absolute; left: 0px; bottom: 0px"
+                  >
+                  </q-card-actions>
+              </q-card>
+            </div>
+            <div :class="{'col-12':true, 'col-sm-6': true, 'q-pa-lg': $q.screen.gt.sm, 'q-py-lg': $q.screen.lt.sm }">
+              <q-card :class="$q.screen.lt.sm ? 'tutorial-card': 'q-pa-md tutorial-card'"  style="min-height:570px;"  @click="openUrl('https://maakbibapp.web.app/activiteiten')">
+                  <q-card-section>
+                    <q-chip
+                      class="q-mb-sm text-body1 text-weight-bold"
+                      color="darkyellow"
+                      text-color="white"
+                      >Inkscape</q-chip
+                    >
+                    <q-img
+                      class="rounded-borders"
+                      src="../assets/tut-voorbeeld.png"
+                      :ratio="16 / 9"
+                    />
+                  </q-card-section>
+                  <q-card-section class="q-py-none">
+                    <div class="text-h5 text-weight-bold">
+                      Voorbeelden Inkscape
+                    </div>
+                    <div class="text-body1 text-weight-semibold">
+                      Op deze pagina vind je tal van voorbeelden om met Inkscape aan de slag te gaan. Volg de stappen in het voorbeeld om jouw eigen tekening vorm te geven. Klik via de link door op "Sleutelhanger maken met Inkscape en de lasercutter" of "theelichthouder maken met de lasercutter". Deze voorbeelden kan je ook perfect volgen om een tekening te maken die je kan borduren of snijplotten.
+                    </div>
+                  </q-card-section>
+
+                  <q-card-actions
+                    style="position: absolute; left: 0px; bottom: 0px"
+                  >
+                  </q-card-actions>
+              </q-card>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row q-pa-md q-pr-xl q-my-xl q-pb-xl container-max-width">
+        <div class="col-12 col-sm-12">
+          <div
+            :class="
+              $q.screen.lt.sm
+                ? 'text-h5 text-sred q-pb-lg'
+                : 'text-h3 text-sred q-pb-xl'
+            "
+          >
+            <span><q-img src="../assets/badge-step3-red.svg" height="60px" width="60px" contain /></span> WAT KAN JE MAKEN?
+          </div>
+
+                <div
+            :class="{
+              'text-h5': $q.screen.gt.sm,
+              'text-body1': $q.screen.lt.sm,
+              'text-darkyellow': true,
+              'text-weight-regular': true,
+              'font-josefin': true
+            }"
+          >
+            <p>Niet elke maakplaats heeft dezelfde machines om jouw badge of button te maken, hieronder <span class="text-weight-bold">ontdek je alle opties</span>. Kijk op de <span class="text-weight-bold">kaart in stap 1 om te ontdekken over welke machines de maakplaats in jouw buurt beschikt.</span></p>
+          </div>
+
+          <div class="row">
+            <div :class="{'col-12':true, 'col-sm-4':true, 'q-px-xl':$q.screen.gt.sm, 'q-pb-xl':true, 'q-pt-lg': $q.screen.gt.sm}" v-for="tool in tools" :key="tool.name">
+              <div class="row justify-between items-center">
+
+                <q-chip color="darkyellow" text-color="white" class="text-weight-bold text-uppercase">{{tool.name}}</q-chip>
+
+              </div>
+              <div class="text-h4">
+                {{tool.info}}
+              <q-chip color="darkyellow" size="xs" outline class="text-weight-bold text-uppercase">{{tool.count}} van de {{numberOfMaakbibs}} deelnemende maakplaatsen kunnen dit</q-chip>
+
+              </div>
+              <div>
+                <q-img contain :src="tool.img" />
+              </div>
+
+
+            </div>
+          </div>
 
         </div>
       </div>
@@ -201,19 +356,17 @@
           >
             VRÅGEN
           </div>
-    <q-list bordered>
- 
+    <q-list>
+
 
       <q-expansion-item
         group="somegroup"
-        label="Met hoeveel mag ik naar de maakplaats?"
-        header-class="bg-darkyellow text-white"
+        label="Mag ik in groep naar de maakplaats?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
       >
-        <q-card class="bg-white">
+        <q-card class="bg-bgyellow">
           <q-card-section>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
-            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
-            eveniet doloribus ullam aliquid.
+            Neen, het is makkelijker om met 2 tot 4 personen langs te gaan. Wil je toch in groep? Neem dan contact op met de maakplaats in jouw buurt om de mogelijkheden te verkennen. Vermeld er zeker bij dat je informeert in verband met de 'badge en button actie van Spark'.
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -221,17 +374,97 @@
 
       <q-expansion-item
         group="somegroup"
-        label="Hoe maak ik een vectortekening?"
-        header-class="bg-darkyellow text-white"
+        label="Mag ik meerdere badges en buttons maken?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
       >
-        <q-card class="bg-white">
+        <q-card class="bg-bgyellow">
           <q-card-section>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
-            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
-            eveniet doloribus ullam aliquid.
+            Neen, in principe heeft elke persoon die in de maakplaats langskomt recht op 1 badge of button. Je kan dus niet alleen gaan en dezelfde badge of button 30 keer laten maken, toch alleszins niet gratis.
           </q-card-section>
         </q-card>
       </q-expansion-item>
+      <q-separator />
+
+      <q-expansion-item
+        group="somegroup"
+        label="Help, wat moet ik doen als mijn vectortekening niet lukt?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+          Probeer thuis eerst zelfstandig jouw vectortekening te maken met Inkscape of Illustrator. Zit je toch vast? Neem dan contact op met de maakplaats in je buurt (of ga langs) en daar helpen ze jou met alle plezier verder!
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+      <q-expansion-item
+        group="somegroup"
+        label="Is het echt gratis?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+          Ja, volledig gratis. Spark betaalt de kost van jouw badge of button. Uiteraard, we maken maar 1 badge of button per persoon die aanwezig is in de maakplaats. Vermeld bij aankomst in de maakplaats dat je langskomt om deel te nemen aan de "badge 'n button actie van Spark".
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+      <q-expansion-item
+        group="somegroup"
+        label="Mag ik ontwerpen wat ik wil?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+          Ja, je kiest zelf wat je tekent en wil maken. Wij vermelden een badge of button, maar als jij een coole knoop voor je sjaaltje (of iets anders) wil lasersnijden, dan mag dat uiteraard ook. Zorg er ook voor dat je jouw ontwerp op USB of in je mailbox bij hebt in .svg of .dxf formaat.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+      <q-expansion-item
+        group="somegroup"
+        label="Hoe groot mag mijn ontwerp zijn?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+          We raden aan om een ontwerp te maken dat kleiner is dan 10 bij 10 cm. Zorg er ook voor dat je jouw ontwerp op USB of in je mailbox bij hebt in .svg of .dxf formaat.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+        <q-expansion-item
+        group="somegroup"
+        label="Hoe maak ik een vectortekening?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+          Om een vectortekening te maken heb je een softwarepakket nodig. We raden het gratis tekenprogramma Inkscape aan, hierboven vind je enkele tutorials om hiermee aan de slag te gaan.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+        <q-expansion-item
+        group="somegroup"
+        label="Wat breng ik mee naar de maakplaats?"
+        header-class=" text-darkyellow text-h6 text-weight-bold"
+      >
+        <q-card class="bg-bgyellow">
+          <q-card-section>
+           Zorg er voor dat je jouw ontwerp op USB of in je mailbox bij hebt in .svg of .dxf formaat.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator />
+
+
+
     </q-list>
 
         </div>
@@ -245,136 +478,90 @@
 </template>
 
 <script>
-import {
-  LMap,
-  LTileLayer,
-  LMarker,
-  LIcon,
-  LPopup,
-  LFeatureGroup,
-} from "vue2-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl-leaflet";
-import "mapbox-gl/dist/mapbox-gl.css";
-import "leaflet/dist/leaflet.css";
-
-window.mapboxgl = mapboxgl; // mapbox-gl-leaflet expects this to be global
 
 export default {
-  components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-    LIcon,
-    LPopup,
-    LFeatureGroup,
-  },
+  name: "Badge",
   data() {
     return {
-      email: "",
+     email: "",
+     numberOfMaakbibs: 13,
       steps: [
         {
           number: "1",
-          title: "Vind een Maakplaats",
+          title: "Vind een maakplaats",
           instruction:
-            "Een maakplaats stelt machines en materialen ter beschikking voor jullie, zodat je zelf een badge, pin of button kan gaan maken. Je vindt de lijst van de deelnemende maakplaatsen hieronder.",
+            "Een maakplaats stelt machines en materialen ter beschikking voor jullie, zodat je zelf een badge, sticker of button kan maken. Je vindt de lijst van de deelnemende maakplaatsen hieronder.",
           img: require("../assets/badge-step1.svg"),
+          hero: require("../assets/step1.png"),
+          linkref: "step1"
         },
         {
           number: "2",
           title: "Teken jouw badge thuis",
           instruction:
-            "Zoek of maak een afbeelding waar je een button of badge wil van maken. Let op, dit moet een vectortekening zijn. Weet je niet hoe je dit doet? Volg dan de tutorial die je vindt in de vragen-sectie onderaan om je op weg te helpen.",
+            "Ontwerp een tekening waar je een button of badge wil van maken. Let op, dit moet een vectortekening zijn. Weet je niet hoe je dit doet? Volg dan de tutorials die je hieronder vindt om je op weg te helpen.",
           img: require("../assets/badge-step2.svg"),
+          hero: require("../assets/step2.png"),
+          linkref: "step2"
         },
         {
           number: "3",
-          title: "Maak jouw badge in de Maakplaats",
+          title: "Maak jouw badge in de maakplaats",
           instruction:
-            "Breng die afbeelding mee naar de Maakplaats, ga langs tijdens de bezoekmomenten. Je kan nu zelf jouw badge maken door die te lasercutten of te snijplotten, hoe cool is dat! Een keileuke activiteit voor jong en oud!",
+            "Breng jouw vectorafbeelding mee naar de maakplaats, ga langs tijdens de bezoekmomenten. Je kan die nu zelf lasercutten, borduren of snijplotten, hoe cool is dat! Kijk goed na welke machines ze hebben in jouw maakplaats.",
           img: require("../assets/badge-step3.svg"),
+          hero: require("../assets/step3.png"),
+          linkref: "step3"
         },
         {
           number: "4",
           title: "Deel jouw badge met ons online",
           instruction:
-            "Deel jullie mooie creaties met ons via social media (vergeet ons niet te taggen @spark.vlaanderen)",
+            "Deel jullie mooie creaties met ons via social media (vergeet ons niet te taggen @spark.vlaanderen).",
           img: require("../assets/badge-step4.svg"),
+          hero: require("../assets/step4.png"),
+          linkref: "step4"
         },
       ],
-      center: [51.03801074569206, 4.241118140786151],
-      zoom: 9,
-      caller: {
-        member: "",
-        avatar: "",
-      },
-      tileLayerClass: (url, options) => L.mapboxGL(options),
-      layerOptions: {
-        accessToken:
-          "pk.eyJ1Ijoiam9vcyIsImEiOiJjaW8wNnNzdGEwMHU4d2RseWxxMjNpdGlxIn0.FhTRgOM5bOsS_t_dzoM_kpk.eyJ1Ijoiam9vcyIsImEiOiJja3YxM3o4YzYza2s5MzBzN2N0bDZ4MWluIn0.r92g1sFwKMkVI0j8aCu0Ggw",
-        style: "mapbox://styles/mapbox/bright-v8",
-      },
-      markerLatLng: [51.050178, 3.657055],
-      icon: L.icon({
-        iconUrl: require("../assets/icon-maakbib.png"),
-        iconSize: [37, 37],
-        iconAnchor: [16, 16],
-      }),
-      iconActive: L.icon({
-        iconUrl: require("../assets/icon-maakbib-blue.png"),
-        iconSize: [37, 37],
-        iconAnchor: [16, 16],
-      }),
-      popupOptions: {
-          minWidth: '150'
-      },
-      maakbibs: [
+      tools: [
         {
-          name: "Bibliotheek Poperinge",
-          markerLatLng: [50.8584116426702, 2.729582691037927],
-          avatar: require("../assets/members-color/member-poperinge.png"),
-          link: "https://poperinge.bibliotheek.be/",
+          name: "lasersnijden",
+          img: require("../assets/tool-laseren1.png"),
+          info: "Je kan een button of ontwerp lasersnijden",
+          count: "13"
         },
         {
-          name: "Bibliotheek Middelkerke",
-          markerLatLng: [51.18711486636484, 2.8231302867505312],
-          avatar: require("../assets/members-color/member-middelkerke.jpeg"),
-          link: "https://middelkerke.bibliotheek.be/",
+          name: "snijplotten",
+          img: require("../assets/tool-snijplotten.png"),
+          info: "Je kan een badge snijplotten en op je hemd strijken",
+          count: "13"
         },
         {
-          name: "Bibliotheek Ieper",
-          markerLatLng: [50.85616308983333, 2.8852100123534745],
-          avatar: require("../assets/members-color/member-ieper.png"),
-          link: "https://ieper.bibliotheek.be/",
+          name: "borduren",
+          img: require("../assets/tool-borduren.png"),
+          info: "Je kan een badge borduren op je hemd",
+          count: "3"
         },
-      ],
+      ]
     };
   },
-  methods: {
-          openPopUp(latLng, name) {
-      const i = this.maakbibs.map(m => m.name).indexOf(name);
+  computed: {
 
-      this.caller.member = name;
-      this.caller.avatar = this.maakbibs[i].avatar;
-
-      this.$refs.features.mapObject.openPopup(latLng);
-    },
   },
-    computed: {
-    countmaakbibs(){
-      return this.maakbibs.length;
-    },
-    dynamicSize() {
-      return [this.iconSize, this.iconSize * 1.15];
-    },
-    dynamicAnchor() {
-      return [this.iconSize / 2, this.iconSize * 1.15];
-    },
+  methods: {
+        openUrl(url){
+      window.open(url, '_blank');
+    }
   },
 };
 </script>
+<style lang="css" scoped>
 
-<style lang="scss" scoped>
+.tutorial-card {
+  border-radius: 15px;
+}
+
+.tutorial-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 </style>
