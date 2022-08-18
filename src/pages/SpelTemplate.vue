@@ -164,7 +164,7 @@ export default {
         videoPresent: false,
         heroImg: require('../assets/spellendatabank.png'),
         videoUrl: '',
-        spelficheUrl: '',
+        spelficheUrl: 'https://github.com/joosVC/spark/blob/24efd1953180d17ddcc8fc4b668e520a5b7f95e2/public/files/pdf/test.pdf',
         makerTips: [
           {
             tipNr: 1,
